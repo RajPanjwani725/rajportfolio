@@ -70,7 +70,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "Profile.wsgi.application"
-
+import django_on_heroku
+django_on_heroku.settings(locals())
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases

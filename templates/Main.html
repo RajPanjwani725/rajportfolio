@@ -842,56 +842,56 @@
             <div class="row row--25 mt--30 mt_md--10 mt_sm--10">
 
                 <!-- Start Single blog -->
+                {% for project_no in project_no %}
 
-                <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="100" data-aos-once="true"
-                     class="col-lg-12 col-xl-6 mt--30 col-md-6 col-sm-12 col-12 mt--30 ">
+                    <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="100" data-aos-once="true"
+                         class="col-lg-12 col-xl-6 mt--30 col-md-6 col-sm-12 col-12 mt--30 ">
 
-                    <div class="rn-blog" data-bs-toggle="modal" data-bs-target="#exampleModalCenters"
-                         style="width: 100%">
-                        {% for project_no in project_no %}
+                        <div class="rn-blog" data-bs-toggle="modal" data-bs-target="#exampleModalCenters"
+                             style="width: 100%">
+
                             <div class="inner">
 
 
-                            <div class="thumbnail" style="height: auto;">
-                                <a href="#blog">
-                                    <img src="../{{ project_no.project_image }}"
-                                         alt="Personal Portfolio Images">
-                                </a>
-                            </div>
+                                <div class="thumbnail" style="height: auto;">
+                                    <a href="#blog">
+                                        <img src="../{{ project_no.project_image }}"
+                                             alt="Personal Portfolio Images">
+                                    </a>
+                                </div>
 
 
-                            <div class="content">
+                                <div class="content">
 
-                                <div class="inner">
+                                    <div class="inner">
 
-                                    <h5 class="title" style="color: black">
-                                        {{ project_no.project_name }}
-                                    </h5>
+                                        <h5 class="title" style="color: black">
+                                            {{ project_no.project_name }}
+                                        </h5>
 
-                                    <h4 style="color: black;font-size: large">{{ project_no.project_description }} </h4>
+                                        <h4 style="color: black;font-size: large">{{ project_no.project_description }} </h4>
+
+                                    </div>
+                                    {% if project_no.project_live_link == "" %}
+                                        <a class="rn-btn" target="_blank"
+                                           href="{{ project_no.project_link_github }}"><span>Github</span></a>
+                                    {% else %}
+                                        <a class="rn-btn" target="_blank"
+                                           href="{{ project_no.project_live_link }}"><span>View Website</span></a>
+
+                                        <a class="rn-btn" target="_blank" style="margin-left: 5px"
+                                           href="{{ project_no.project_link_github }}"><span>Github</span></a>
+
+                                    {% endif %}
+
 
                                 </div>
-                                {% if project_no.project_live_link == "" %}
-                                    <a class="rn-btn" target="_blank"
-                                       href="{{ project_no.project_link_github }}"><span>Github</span></a>
-                                {% else %}
-                                    <a class="rn-btn" target="_blank"
-                                       href="{{ project_no.project_live_link }}"><span>View Website</span></a>
-
-                                    <a class="rn-btn" target="_blank" style="margin-left: 5px"
-                                       href="{{ project_no.project_link_github }}"><span>Github</span></a>
-
-                                {% endif %}
-
 
                             </div>
-                        {% endfor %}
                         </div>
                     </div>
-                </div>
+                {% endfor %}
             </div>
-
-
             <!-- End Single blog -->
 
         </div>

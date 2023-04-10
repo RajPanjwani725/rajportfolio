@@ -1,0 +1,48 @@
+{% extends 'navbar.html' %}
+{% block content %}
+
+{#{{ parameter }}#}
+
+    <div class="" style="margin-top: 9px;">
+
+
+        <div class="container" style="margin-top: 0.9%;align-items: center;  ">
+
+
+            <div class="row" style="height: ">
+
+                {% for parameter in parameter %}
+
+
+                <div class="col" style="margin: 1%; float:left;">
+
+                    <div class="card" style=" height: auto">
+{#                        <img src="../{{ val.product_image }}" style="width: auto;height: 250px" class="card-img-top"#}
+{#                             alt="...">#}
+
+                        <iframe   class="card-img-top" style="width: auto;height: 600px" src="{{ parameter.project_link_youtube}}" title="YouTube video player" ></iframe>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ parameter.project_name }}</h5>
+                            <p class="card-text">{{ parameter.project_description }}</p>
+                            <p class="card-text"><strong>Technologies Used : </strong></strong>{{ parameter.project_technologies }}</p>
+
+
+                            <a href="{{ parameter.project_link_linkedin}}" class="btn btn-primary">LinkedIn </a>
+                             <a href="{{ parameter.project_link_github }}" class="btn btn-primary">Github </a>
+                        </div>
+                    </div>
+
+                </div>
+                    {{ parameter.product_link }}
+
+ {% endfor %}
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+{% endblock %}
